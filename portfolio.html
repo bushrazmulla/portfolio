@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bushra Mulla - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for stylish typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS (Animate On Scroll) library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111; /* Darker background */
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom section title style inspired by the template */
+        .section-title {
+            position: relative;
+            padding-left: 1.5rem; /* Space for the decorative element */
+        }
+        .section-title::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FBBF24; /* yellow-400 */
+            font-size: 1.25rem;
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(251, 191, 36, 0.1), 0 10px 10px -5px rgba(251, 191, 36, 0.04);
+        }
+        /* Animated scroll down indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100">
+
+    <!-- Header -->
+    <header class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-bold text-white">BM</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-yellow-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-yellow-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-yellow-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-yellow-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-yellow-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+            <a href="#about" class="block py-2 px-6 hover:bg-gray-800">About</a>
+            <a href="#skills" class="block py-2 px-6 hover:bg-gray-800">Skills</a>
+            <a href="#experience" class="block py-2 px-6 hover:bg-gray-800">Experience</a>
+            <a href="#projects" class="block py-2 px-6 hover:bg-gray-800">Projects</a>
+            <a href="#contact" class="block py-2 px-6 hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center relative">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="font-display text-6xl md:text-8xl font-black text-white leading-tight mb-4" data-aos="fade-down">
+                    Bushra Mulla
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    A passionate <span class="text-yellow-400">Data Science</span> student & <span class="text-yellow-400">Full-Stack Developer</span> building innovative solutions to complex problems.
+                </p>
+                <div class="flex justify-center space-x-6" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://in.linkedin.com/in/bushra-mulla-7a1713287" target="_blank" class="text-gray-300 hover:text-yellow-400 text-3xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:bushrazmulla@gmail.com" class="text-gray-300 hover:text-yellow-400 text-3xl transition-colors"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+917760798546" class="text-gray-300 hover:text-yellow-400 text-3xl transition-colors"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="scroll-down text-yellow-400 text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="py-24 bg-gray-900 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-4xl font-bold font-display text-left mb-12" data-aos="fade-right">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3 flex justify-center" data-aos="fade-right" data-aos-delay="200">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-yellow-400 flex items-center justify-center overflow-hidden border-4 border-gray-800 shadow-lg">
+                             <img src="https://placehold.co/320x320/1F2937/FBBF24?text=BM" alt="Bushra Mulla" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 text-lg text-gray-300 space-y-4" data-aos="fade-left" data-aos-delay="400">
+                        <p>I am a dedicated and results-oriented Bachelor of Engineering student in Computer Science, specializing in Data Science at Atria Institute of Technology, Bangalore. My academic journey has equipped me with a strong foundation in programming, data analysis, and web development.</p>
+                        <p>I have hands-on experience as a MERN Stack Developer Intern, where I contributed to full-stack web applications. I am proficient in a variety of technologies including Python, Java, JavaScript, and frameworks like React and Express.js. I'm also skilled in data visualization tools like Tableau and Power BI.</p>
+                        <p>I thrive in collaborative environments and possess strong communication and problem-solving skills. I'm passionate about leveraging technology to create impactful and user-friendly applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="py-24 bg-black overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-4xl font-bold font-display text-left mb-12" data-aos="fade-right">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Languages -->
+                    <div class="bg-gray-900 p-6 rounded-lg card-hover-effect" data-aos="fade-up">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Languages</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-code mr-2 text-yellow-500"></i>Python, Java, JavaScript, HTML/CSS, SQL, C</li>
+                        </ul>
+                    </div>
+                    <!-- Frameworks & Libraries -->
+                    <div class="bg-gray-900 p-6 rounded-lg card-hover-effect" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Frameworks & Libraries</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-cogs mr-2 text-yellow-500"></i>React, Express.js, Node.js, NumPy, Pandas</li>
+                        </ul>
+                    </div>
+                    <!-- Tools & Other -->
+                    <div class="bg-gray-900 p-6 rounded-lg card-hover-effect" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Tools & Other</h3>
+                        <ul class="space-y-2 text-gray-300">
+                           <li><i class="fas fa-tools mr-2 text-yellow-500"></i>Power BI, Tableau, MongoDB, Git, Big Data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="py-24 bg-gray-900 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-4xl font-bold font-display text-left mb-12" data-aos="fade-right">Experience</h2>
+                <div class="relative border-l-2 border-yellow-400 ml-6 md:ml-8">
+                    <!-- MERN Stack Intern -->
+                    <div class="mb-12 pl-12 md:pl-16" data-aos="fade-left">
+                        <div class="absolute -left-4 top-1 w-8 h-8 bg-gray-900 border-4 border-yellow-400 rounded-full"></div>
+                        <p class="text-yellow-400 font-semibold">Feb 2025 - Present</p>
+                        <h3 class="text-2xl font-bold text-white mt-1">MERN Stack Developer Intern</h3>
+                        <p class="text-gray-400 mb-2">Technologics Company (Remote)</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Developed full-stack web applications using the MERN stack.</li>
+                            <li>Built and maintained RESTful APIs for seamless data flow.</li>
+                            <li>Collaborated with the team to debug, test, and optimize features.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-24 bg-black overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-4xl font-bold font-display text-left mb-12" data-aos="fade-right">Academic Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Cards -->
+                    <div class="bg-gray-900 p-6 rounded-lg flex flex-col card-hover-effect" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-yellow-400 mb-2">E-commerce Application</h3>
+                        <p class="text-gray-400 flex-grow">A dynamic shopping platform with cart management and secure checkout.</p>
+                        <div class="mt-4"><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">React</span><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Node.js</span></div>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg flex flex-col card-hover-effect" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-yellow-400 mb-2">Pothole Detection System</h3>
+                        <p class="text-gray-400 flex-grow">A smart system to detect potholes using ML and track repairs via Google Maps API.</p>
+                        <div class="mt-4"><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Python</span><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">OpenCV</span></div>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg flex flex-col card-hover-effect" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-yellow-400 mb-2">Restaurant Reservation App</h3>
+                        <p class="text-gray-400 flex-grow">A full-stack web app for making table reservations with real-time updates.</p>
+                        <div class="mt-4"><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Node.js</span><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">MongoDB</span></div>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg flex flex-col card-hover-effect" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-yellow-400 mb-2">Sales Dashboards</h3>
+                        <p class="text-gray-400 flex-grow">Interactive dashboards to analyze sales trends and customer insights.</p>
+                        <div class="mt-4"><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Tableau</span><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Power BI</span></div>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg flex flex-col card-hover-effect" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-yellow-400 mb-2">Fashion Chatbot</h3>
+                        <p class="text-gray-400 flex-grow">An intelligent chatbot that suggests fashion combinations using NLP.</p>
+                        <div class="mt-4"><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Python</span><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">NLTK</span></div>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg flex flex-col card-hover-effect" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-yellow-400 mb-2">IoT Street Light System</h3>
+                        <p class="text-gray-400 flex-grow">A smart street light automation system using Arduino to reduce power usage.</p>
+                        <div class="mt-4"><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Arduino</span><span class="bg-gray-800 text-yellow-400 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">IoT</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education -->
+        <section id="education" class="py-24 bg-gray-900 overflow-hidden">
+            <div class="container mx-auto px-6 text-center" data-aos="zoom-in">
+                 <h2 class="section-title text-4xl font-bold font-display inline-block mb-8">Education</h2>
+                 <h3 class="text-2xl font-semibold text-white">Bachelor of Engineering in Computer Science (Data Science)</h3>
+                 <p class="text-yellow-400 text-lg mt-2">Atria Institute of Technology, Bangalore, India</p>
+                 <p class="text-gray-400 mt-1">December 2022 - Present</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-24 bg-black">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                <h2 class="section-title text-4xl font-bold font-display inline-block mb-4">Get In Touch</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+                    I'm currently looking for new opportunities. My inbox is always open, whether you have a question or just want to say hi.
+                </p>
+                <a href="mailto:bushrazmulla@gmail.com" class="bg-yellow-400 text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition-transform hover:scale-105 inline-block text-lg">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://in.linkedin.com/in/bushra-mulla-7a1713287" target="_blank" class="hover:text-yellow-400 text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:bushrazmulla@gmail.com" class="hover:text-yellow-400 text-2xl transition-colors"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+917760798546" class="hover:text-yellow-400 text-2xl transition-colors"><i class="fas fa-phone"></i></a>
+            </div>
+            <p>&copy; 2024 Bushra Z Mulla. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) library script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800, // animation duration
+            once: true, // whether animation should happen only once
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
